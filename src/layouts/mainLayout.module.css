@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягивает на всю высоту экрана */
+}
+
+.main {
+  flex: 1; /* Занимает всё свободное пространство между хедером и футером */
+  padding: 40px 0;
+}
+
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

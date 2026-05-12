@@ -1,0 +1,109 @@
+.footer {
+  background-color: #f3f9fb; /* Тот самый светло-голубой фон */
+  color: #222; /* Черный текст */
+  padding: 60px 0 20px 0;
+  border-top: 1px solid #e5f2f7;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Стили заголовков */
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #008ecc;
+  margin-bottom: 20px;
+}
+
+.title span {
+  color: #222;
+}
+
+.subTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Список контактов */
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.icon {
+  color: #008ecc;
+  flex-shrink: 0;
+}
+
+/* Навигация */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #008ecc;
+}
+
+/* Соцсети */
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcon {
+  color: #222;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.socialIcon:hover {
+  color: #008ecc;
+  transform: translateY(-3px);
+}
+
+/* Нижняя полоса */
+.bottomBar {
+  border-top: 1px solid #deeef5;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 768px) {
+  .footerContent {
+    text-align: center;
+  }
+  .contactList li, .socials {
+    justify-content: center;
+  }
+}

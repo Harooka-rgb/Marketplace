@@ -1,0 +1,137 @@
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 320px;
+  margin: 60px auto;
+  background-color: #1e2640; /* Цвет как на image_9d4c78.png */
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Легкий градиентный круг для декора */
+  background-image: radial-gradient(circle at 85% 50%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 30%, transparent 70%);
+}
+
+.bannerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 60px;
+}
+
+.textSection {
+  color: #ffffff;
+  z-index: 2;
+}
+
+.subTitle {
+  font-size: 20px;
+  margin: 0 0 8px 0;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.mainTitle {
+  font-size: 58px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.promoText {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 15px 0 0 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.imageSection {
+  position: relative;
+  height: 100%;
+  
+    display: flex;
+    align-items: center;
+
+}
+
+.watchImage {
+  height: 300px;
+  width: auto;
+  max-width: 320px;
+  transform: translateY(0);
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.4));
+  user-select: none;
+}
+
+/* Навигация */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  background-color: #f0faff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #00a8cc;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.navBtn:hover {
+  background-color: #ffffff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.prevBtn { left: -27px; }
+.nextBtn { right: -27px; }
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  gap: 6px;
+  margin-top: 35px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.active {
+  width: 24px;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 768px) {
+  .bannerContainer {
+    height: auto;
+    padding: 40px 20px;
+    margin: 20px;
+  }
+  .bannerContent {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+  }
+  .mainTitle { font-size: 36px; }
+  .watchImage {
+    height: 250px;
+    margin-top: 20px;
+  }
+  .navBtn { display: none; } /* Прячем стрелки на малых экранах */
+}
