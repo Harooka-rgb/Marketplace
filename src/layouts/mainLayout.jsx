@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import styles from './MainLayout.module.css';
+import styles from './mainLayout.module.css';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
