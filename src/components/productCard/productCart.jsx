@@ -1,5 +1,9 @@
 import React from 'react';
 import styles from './productCart.module.css';
+import { IoCart } from "react-icons/io5";
+import { IoMdHeartEmpty } from "react-icons/io";
+
+
 
 const ProductCard = ({ product }) => {
   console.log('ProductCard получил:', product);
@@ -33,7 +37,9 @@ const ProductCard = ({ product }) => {
           {rating > 4.5 && <span className={styles.bestPriceBadge}>👍 ХОРОШАЯ ЦЕНА</span>}
         </div>
         
-        <button className={styles.favoriteBtn}>♡</button>
+        <button className={styles.favoriteBtn} >
+          <IoMdHeartEmpty />
+        </button>
       </div>
 
       <div className={styles.info}>
@@ -56,7 +62,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         <button className={styles.cartBtn}>
-          <span className={styles.cartIcon}>🛒</span> В корзину
+          <span className={styles.cartIcon}><IoCart /></span> В корзину
         </button>
       </div>
     </div>

@@ -1,0 +1,130 @@
+/* Затемнение фона при открытом меню */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.overlayVisible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Сама панель */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: #ffffff;
+    z-index: 1001;
+    box-shadow: 4px 0 15px rgba(0, 86, 179, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarOpen {
+    transform: translateX(0);
+}
+
+/* Шапка сайдбара */
+.sideHeader {
+    padding: 25px;
+    background: #007bff; /* Твой синий цвет */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sideHeader h2 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Список категорий */
+.content {
+    padding: 20px 0;
+    overflow-y: auto;
+}
+
+.categorySection {
+    margin-bottom: 20px;
+}
+
+.sectionTitle {
+    padding: 0 25px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #8899a6;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.navItem:hover {
+    background: #f0f7ff;
+    color: #007bff;
+    border-left: 4px solid #007bff;
+}
+
+.icon {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.loading {
+    padding: 20px 25px;
+    color: #007bff;
+    font-style: italic;
+}
+
+.catIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+.defaultIcon {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+/* Эффект для активной ссылки (опционально) */
+.navItem:active {
+    background: #e0f0ff;
+}

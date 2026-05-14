@@ -12,8 +12,8 @@ const Banner = () => {
 
       <div className={styles.bannerContent}>
         <div className={styles.textSection}>
-          <p className={styles.subTitle}>Best Deal Online on smart watches</p>
-          <h1 className={styles.mainTitle}>SMART WEARABLE.</h1>
+          <p className={styles.subTitle}>Best Deal Online on laptops</p>
+          <h1 className={styles.mainTitle}>LAPTOP</h1>
           <p className={styles.promoText}>UP to 80% OFF</p>
           
           {/* Пагинация */}
@@ -29,8 +29,8 @@ const Banner = () => {
 
         <div className={styles.imageSection}>
           <img 
-            src="https://ibox-store.net/upload/iblock/4a9/b28ylkm6nnrxmhwelxp8eliz7nkpr45d/smart_chasy_samsung_galaxy_fit3_grafitovyy.png" 
-            alt="Smart Watch" 
+            src="https://static.tildacdn.one/stor3765-6535-4831-b464-653631373366/76904476.png" 
+            alt="Laptop Banner" 
             className={styles.watchImage}
           />
         </div>
