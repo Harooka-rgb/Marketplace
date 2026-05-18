@@ -1,0 +1,176 @@
+.sliderWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.sliderContainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sliderTrack {
+  display: flex;
+  will-change: transform;
+}
+
+.slideItem {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+/* Top Controls */
+.topControls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: flex-end;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #e8e8e8;
+  background: #ffffff;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.arrow:hover:not(:disabled) {
+  background: #008ecc;
+  border-color: #008ecc;
+  color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 142, 204, 0.3);
+}
+
+.arrow:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.arrowDisabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: #f0f0f0;
+  color: #ccc;
+}
+
+.arrowDisabled:hover {
+  background: #ffffff;
+  border-color: #f0f0f0;
+  color: #ccc;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Side Arrows */
+.sideArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #e8e8e8;
+  background: #ffffff;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sideArrow:hover:not(:disabled) {
+  background: #008ecc;
+  border-color: #008ecc;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 142, 204, 0.3);
+}
+
+.sideArrowLeft {
+  left: -22px;
+}
+
+.sideArrowRight {
+  right: -22px;
+}
+
+/* Dots */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: #b0b0b0;
+}
+
+.dotActive {
+  background: #008ecc;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .sideArrowLeft {
+    left: -10px;
+  }
+  
+  .sideArrowRight {
+    right: -10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  
+  .sideArrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  .sideArrowLeft {
+    left: 5px;
+  }
+  
+  .sideArrowRight {
+    right: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .topControls {
+    margin-bottom: 16px;
+  }
+  
+  .dotsContainer {
+    margin-top: 16px;
+  }
+}

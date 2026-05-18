@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { memo, useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 import styles from './productCart.module.css';
 import { IoCart } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
-
-
+import { addToCart } from '../../store/cartSlice';
 
 const ProductCard = ({ product }) => {
-  console.log('ProductCard получил:', product);
+  const dispatch = useDispatch();
   if (!product) {
     console.warn('ProductCard: product не передан!');
     return null;
@@ -26,10 +26,17 @@ const ProductCard = ({ product }) => {
     ? Math.round(((oldPrice - price) / oldPrice) * 100) 
     : null;
 
+  const handleAddToCart = useCallback(() => {
+    dispatch(addToCart(product));
+  }, [dispatch, product]);
+
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
         <img src={image} alt={productName} className={styles.image} />
+        
+        {/* Stock badge */}
+        <span className={styles.stockBadge}>in stock</span>
         
         {/* Бейджи поверх картинки */}
         <div className={styles.badges}>
@@ -61,12 +68,16 @@ const ProductCard = ({ product }) => {
           <span className={styles.reviews}>{reviewsCount} отзывов</span>
         </div>
 
-        <button className={styles.cartBtn}>
-          <span className={styles.cartIcon}><IoCart /></span> В корзину
+        <button 
+          className={styles.cartBtn}
+          onClick={handleAddToCart}
+        >
+          <span className={styles.cartIcon}><IoCart /></span>
+          <span className={styles.btnText}>В корзину</span>
         </button>
       </div>
     </div>
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

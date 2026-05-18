@@ -1,0 +1,119 @@
+.section {
+  padding: 20px 0;
+  background: #f8f9fb;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: #e8f4fc;
+  padding: 16px 32px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.banner:hover {
+  background: #d0ebf7;
+}
+
+.zipLogo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.zipIcon {
+  width: 28px;
+  height: 28px;
+  background: #008ecc;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.zipText {
+  font-size: 20px;
+  font-weight: 700;
+  color: #008ecc;
+  letter-spacing: -0.5px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: #008ecc;
+  opacity: 0.3;
+}
+
+.text {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+.learnMore {
+  font-size: 14px;
+  color: #008ecc;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.learnMore:hover {
+  color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .banner {
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+  
+  .divider {
+    display: none;
+  }
+  
+  .text {
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .learnMore {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .zipText {
+    font-size: 18px;
+  }
+  
+  .text {
+    font-size: 13px;
+  }
+}

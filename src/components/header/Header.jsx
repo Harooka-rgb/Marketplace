@@ -1,13 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useCallback, memo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styles from './Header.module.css';
-import { FiSearch } from "react-icons/fi";
-import { FaRegUser } from "react-icons/fa";
+import { FiSearch, FiHome, FiBox, FiInfo, FiPhone, FiUser, FiLogIn } from "react-icons/fi";
 import { IoCart } from 'react-icons/io5';
+import CartDropdown from '../Cart/CartDropdown';
 
 
 const Header = ({ onMenuClick }) => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const navigate = useNavigate();
+  const { totalQuantity } = useSelector((state) => state.cart);
+  const { user, isAuthenticated } = useSelector((state) => state.auth);
+
+  const handleCartClick = useCallback(() => {
+    setIsCartOpen(true);
+  }, []);
+
+  const handleCloseCart = useCallback(() => {
+    setIsCartOpen(false);
+  }, []);
+
+  const handleCartNavigate = useCallback(() => {
+    setIsCartOpen(false);
+    navigate('/cart');
+  }, [navigate]);
+
+  const userName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
+
   return (
+    <>
     <header className={styles.header}>
       {/* Top Part */}
       <div className={styles.headerTop}>
@@ -27,15 +49,36 @@ const Header = ({ onMenuClick }) => {
           </div>
 
           <div className={styles.userActions}>
-            <div className={styles.actionItem}>
-              <span><FaRegUser /></span>
-              <span>Sign Up</span>
-              <span>Sign In</span>
-            </div>
+            {isAuthenticated ? (
+              <Link to="/profile" className={styles.profileLink}>
+                <div className={styles.avatar}>
+                  <FiUser />
+                </div>
+                <span className={styles.userName}>{userName}</span>
+              </Link>
+            ) : (
+              <div className={styles.authButtons}>
+                <Link to="/register" className={styles.btnSignUp}>
+                  <FiUser />
+                  Sign Up
+                </Link>
+                <Link to="/login" className={styles.btnSignIn}>
+                  <FiLogIn />
+                  Sign In
+                </Link>
+              </div>
+            )}
+            
             <div className={styles.divider}></div>
-            <div className={styles.actionItem}>
-              <span><IoCart /></span>
-              <span>Cart</span>
+            
+            <div className={styles.actionItem} onClick={handleCartClick}>
+              <span className={styles.cartIconWrapper}>
+                <IoCart className={styles.cartIcon} />
+                {totalQuantity > 0 && (
+                  <span className={styles.cartBadge}>{totalQuantity}</span>
+                )}
+              </span>
+              <span className={styles.cartLabel}>Cart</span>
             </div>
           </div>
         </div>
@@ -45,28 +88,30 @@ const Header = ({ onMenuClick }) => {
       <div className={styles.headerBottom}>
         <div className={styles.container}>
           <nav className={styles.mainNav}>
-            <Link to="/" className={styles.navLink}>🏠 Home</Link>
-            <Link to="/shop" className={styles.navLink}>📦 Catalog</Link>
-            <Link to="/about" className={styles.navLink}>ℹ️ About</Link>
-            <Link to="/contacts" className={styles.navLink}>📞 Contacts</Link>
-          </nav>
-          
-          <nav className={styles.navCategories}>
-            <Link to="/shop" className={`${styles.categoryBtn} ${styles.active}`}>Groceries ⌵</Link>
-            <Link to="/shop" className={styles.categoryBtn}>Premium Fruits ⌵</Link>
-            <Link to="/shop" className={styles.categoryBtn}>Home & Kitchen ⌵</Link>
-            <Link to="/shop" className={styles.categoryBtn}>Fashion ⌵</Link>
-            <Link to="/shop" className={styles.categoryBtn}>Electronics ⌵</Link>
-            <Link to="/shop" className={styles.categoryBtn}>Beauty ⌵</Link>
-            <Link to="/shop" className={styles.categoryBtn}>Home Improvement ⌵</Link>
+            <Link to="/" className={styles.navLink}>
+              <FiHome className={styles.navIcon} />
+              <span>Home</span>
+            </Link>
+            <Link to="/shop" className={styles.navLink}>
+              <FiBox className={styles.navIcon} />
+              <span>Catalog</span>
+            </Link>
+            <Link to="/about" className={styles.navLink}>
+              <FiInfo className={styles.navIcon} />
+              <span>About</span>
+            </Link>
+            <Link to="/contacts" className={styles.navLink}>
+              <FiPhone className={styles.navIcon} />
+              <span>Contacts</span>
+            </Link>
           </nav>
         </div>
       </div>
     </header>
 
-
-
+    <CartDropdown isOpen={isCartOpen} onClose={handleCloseCart} />
+    </>
   );
 };
 
-export default Header;
+export default memo(Header);

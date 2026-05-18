@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+.page {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1a1a2e;
+  background: #fff;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 50%, #f5f0ff 100%);
+  text-align: center;
+  padding: 90px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 142, 204, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(0, 142, 204, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(0, 142, 204, 0.2);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 28px;
+}
+
+.heroTitle {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #1a1a2e;
+  margin: 0 auto 24px;
+  max-width: 800px;
+}
+
+.heroTitle span {
+  background: linear-gradient(135deg, #0284c7, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #4b5563;
+  max-width: 640px;
+  margin: 0 auto 40px;
+  font-weight: 400;
+}
+
+.heroCta {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3);
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: #fff;
+  color: #0284c7;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1.5px solid #bae6fd;
+  transition: all 0.25s ease;
+}
+
+.ctaSecondary:hover {
+  background: #f0f9ff;
+  border-color: #7dd3fc;
+  transform: translateY(-2px);
+}
+
+/* ===== STATS ===== */
+.statsSection {
+  padding: 60px 24px;
+  background: #fff;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.statCard {
+  text-align: center;
+  padding: 32px 20px;
+  background: linear-gradient(135deg, #f0f9ff, #e8f4fd);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 142, 204, 0.1);
+  transition: transform 0.25s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+}
+
+.statNumber {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  color: #0284c7;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ===== STORY ===== */
+.story {
+  padding: 80px 24px;
+  background: #fafafa;
+}
+
+.storyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.storyText p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+.storyVisual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.storyCard {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: box-shadow 0.25s ease;
+}
+
+.storyCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.storyCardIcon {
+  color: #0284c7;
+  margin-bottom: 14px;
+}
+
+.storyCard h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.storyCard p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+/* ===== SECTION LABELS ===== */
+.sectionTag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+/* ===== VALUES ===== */
+.values {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.valuesHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.valueCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.valueCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+}
+
+.valueCard:hover::before {
+  opacity: 1;
+}
+
+.valueIcon {
+  color: #0284c7;
+  margin-bottom: 18px;
+}
+
+.valueTitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+.valueDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+/* ===== TEAM ===== */
+.team {
+  padding: 80px 24px;
+  background: linear-gradient(135deg, #f8fafc, #f0f9ff);
+}
+
+.teamHeader {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.teamSub {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background: #fff;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.teamEmoji {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.teamName {
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.teamRole {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.08);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+
+.teamQuote {
+  font-size: 14px;
+  font-style: italic;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ===== BOTTOM CTA ===== */
+.bottomCta {
+  padding: 90px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f172a 100%);
+  color: #fff;
+}
+
+.bottomCta h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.bottomCta p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 36px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .statsGrid,
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .storyContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px 60px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}

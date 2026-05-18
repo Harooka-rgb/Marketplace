@@ -1,0 +1,218 @@
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 24px;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #008ecc;
+}
+
+.profileCard {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #008ecc 0%, #00a8e8 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarIcon {
+  font-size: 36px;
+  color: white;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e2640;
+  margin-bottom: 4px;
+}
+
+.email {
+  font-size: 14px;
+  color: #666;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.detailIcon {
+  font-size: 24px;
+  color: #008ecc;
+}
+
+.detailLabel {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.detailValue {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e2640;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: 2px solid #e8ecf0;
+  background: white;
+  color: #333;
+}
+
+.actionBtn:hover {
+  border-color: #008ecc;
+  color: #008ecc;
+}
+
+.logoutBtn {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+.logoutBtn:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* Not authenticated state */
+.notAuth {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.notAuthIcon {
+  font-size: 64px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.notAuth h2 {
+  font-size: 24px;
+  color: #1e2640;
+  margin-bottom: 8px;
+}
+
+.notAuth p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.notAuthButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #008ecc 0%, #00a8e8 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 142, 204, 0.3);
+}
+
+.btnSecondary {
+  background: white;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #e8ecf0;
+  transition: border-color 0.2s ease;
+}
+
+.btnSecondary:hover {
+  border-color: #008ecc;
+  color: #008ecc;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 20px auto;
+  }
+
+  .profileCard {
+    padding: 24px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .notAuthButtons {
+    flex-direction: column;
+  }
+}

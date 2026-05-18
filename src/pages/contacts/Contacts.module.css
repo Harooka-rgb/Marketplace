@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
+
+.page {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1a1a2e;
+  background: #fff;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 50%, #f0fdf4 100%);
+  text-align: center;
+  padding: 90px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(0, 142, 204, 0.07) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: rgba(0, 142, 204, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(0, 142, 204, 0.2);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  margin-bottom: 28px;
+}
+
+.heroTitle {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(34px, 5.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #1a1a2e;
+  margin: 0 auto 24px;
+  max-width: 700px;
+}
+
+.heroTitle span {
+  background: linear-gradient(135deg, #0284c7, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #4b5563;
+  max-width: 580px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+/* ===== CARDS ===== */
+.cardsSection {
+  padding: 60px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.contactCard {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCard::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7, #059669);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  border-color: transparent;
+}
+
+.contactCard:hover::after {
+  transform: scaleX(1);
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  color: #0284c7;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.cardLine {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.cardHint {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* ===== MAIN SECTION ===== */
+.mainSection {
+  padding: 60px 24px 80px;
+  background: #fafafa;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* ===== LABELS ===== */
+.sectionTag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  color: #1a1a2e;
+  margin-bottom: 28px;
+  line-height: 1.25;
+}
+
+/* ===== FORM ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.formGroup label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.01em;
+}
+
+.formGroup input,
+.formGroup textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 13px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  color: #1a1a2e;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #9ca3af;
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 32px;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3);
+  align-self: flex-start;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+/* ===== SUCCESS ===== */
+.successMsg {
+  text-align: center;
+  padding: 50px 30px;
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border-radius: 20px;
+  border: 1px solid #bbf7d0;
+}
+
+.successEmoji {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.successMsg h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: #15803d;
+  margin-bottom: 12px;
+}
+
+.successMsg p {
+  font-size: 15px;
+  color: #4b5563;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.resetBtn {
+  padding: 11px 24px;
+  background: #fff;
+  color: #15803d;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetBtn:hover {
+  background: #f0fdf4;
+}
+
+/* ===== INFO SIDE ===== */
+.infoText {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #4b5563;
+  margin-bottom: 28px;
+}
+
+.socialsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+.socialRow:hover {
+  border-color: #bae6fd;
+  background: #f0f9ff;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  color: #0284c7;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.socialLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.socialHandle {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+}
+
+/* ===== MAP ===== */
+.mapBlock {
+  margin-top: 8px;
+}
+
+.mapTitle {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+}
+
+.mapEmbed {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px 60px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .submitBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

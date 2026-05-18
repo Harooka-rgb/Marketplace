@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer.module.css';
 import { LuPhone, LuMail, LuMapPin, LuFacebook, LuInstagram, LuTwitter } from "react-icons/lu";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -31,10 +32,10 @@ const Footer = () => {
           <div className={styles.section}>
             <h4 className={styles.subTitle}>Компания</h4>
             <nav className={styles.nav}>
-              <a href="#about">О нас</a>
-              <a href="#delivery">Доставка</a>
-              <a href="#terms">Условия пользования</a>
-              <a href="#contacts">Контакты</a>
+              <Link to="/about">О нас</Link>
+              <Link to="/contacts">Контакты</Link>
+              <Link to="/shop">Каталог</Link>
+              <Link to="/cart">Корзина</Link>
             </nav>
           </div>
 
