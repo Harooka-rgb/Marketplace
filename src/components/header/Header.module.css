@@ -95,6 +95,11 @@
   flex-shrink: 0;
 }
 
+.logoLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 .actionItem {
   display: flex;
   align-items: center;
@@ -105,6 +110,74 @@
 
 .actionItem:hover {
   color: #008ecc;
+}
+
+.iconAction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.iconAction:hover {
+  color: #0284c7;
+}
+
+.iconWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: #0284c7;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.favBadge {
+  background: #dc2626;
+}
+
+.cartIconWrapper {
+  position: relative;
+  display: flex;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: #0284c7;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cartIcon {
@@ -198,6 +271,13 @@
 
 .profileLink:hover {
   opacity: 0.8;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .avatar {
@@ -309,6 +389,14 @@
 
 .navLink:hover span::after {
   width: 100%;
+}
+
+.navActive {
+  color: #0284c7 !important;
+}
+
+.navActive span::after {
+  width: 100% !important;
 }
 
 /* Tablet Responsive */

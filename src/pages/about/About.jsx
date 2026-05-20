@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { LuHeart, LuRocket, LuShield, LuUsers, LuStar, LuMapPin, LuPackage, LuHeadphones } from 'react-icons/lu';
+import { LuHeart, LuRocket, LuShield, LuMapPin, LuPackage, LuHeadphones } from 'react-icons/lu';
+import { FiCode, FiUsers, FiBriefcase, FiTool } from 'react-icons/fi';
 import styles from './About.module.css';
 
 const values = [
@@ -37,19 +38,19 @@ const team = [
   {
     name: 'Айбек Сатаров',
     role: 'Основатель & CEO',
-    emoji: '👨‍💻',
+    icon: <FiCode size={36} />,
     quote: 'Я хотел создать магазин, в котором сам бы с удовольствием покупал.',
   },
   {
     name: 'Аида Токтомаматова',
     role: 'Менеджер по работе с клиентами',
-    emoji: '👩‍💼',
+    icon: <FiUsers size={36} />,
     quote: 'Каждый клиент для нас уникален — и это не просто слова.',
   },
   {
     name: 'Жанибек Усупов',
     role: 'Технический консультант',
-    emoji: '🛠️',
+    icon: <FiTool size={36} />,
     quote: 'Помогаю подобрать то, что реально нужно — без лишних переплат.',
   },
 ];
@@ -60,7 +61,7 @@ const About = () => {
 
       {/* HERO */}
       <section className={styles.hero}>
-        <div className={styles.heroBadge}>🛍️ Мы только начинаем — и это лучшее время присоединиться</div>
+        <div className={styles.heroBadge}><FiBriefcase size={13} /> Мы только начинаем — и это лучшее время присоединиться</div>
         <h1 className={styles.heroTitle}>
           ElectronicMarket — <br />
           <span>магазин, созданный с душой</span>
@@ -155,7 +156,7 @@ const About = () => {
         <div className={styles.teamGrid}>
           {team.map((m, i) => (
             <div key={i} className={styles.teamCard}>
-              <div className={styles.teamEmoji}>{m.emoji}</div>
+              <div className={styles.teamEmoji}>{m.icon}</div>
               <h3 className={styles.teamName}>{m.name}</h3>
               <span className={styles.teamRole}>{m.role}</span>
               <p className={styles.teamQuote}>«{m.quote}»</p>

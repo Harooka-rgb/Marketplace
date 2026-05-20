@@ -1,29 +1,35 @@
+/* ============================
+   CARD — фиксированная структура
+   ============================ */
 .card {
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  border: 1px solid #e8edf2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
   width: 100%;
-  max-width: 280px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border: 1px solid #e8e8e8;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* Фиксированная высота для одинаковых карточек */
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(30, 38, 64, 0.12);
-  border-color: #d0e0f0;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  border-color: #c7dff0;
 }
 
+/* ============================
+   IMAGE — фиксированный контейнер
+   ============================ */
 .imageWrapper {
   position: relative;
   width: 100%;
-  height: 280px;
-  background: #f0f7ff;
+  height: 190px;
+  background: #f5f8fb;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -31,138 +37,209 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
+  padding: 10px;
+  transition: transform 0.3s ease;
 }
 
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+/* ============================
+   BADGES
+   ============================ */
 .badges {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 8px;
+  left: 8px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
+  z-index: 2;
 }
 
 .discountBadge {
-  background: #ff4d4d; /* Оставляем красный для внимания, как на фото */
-  color: white;
-  padding: 2px 8px;
+  background: #ef4444;
+  color: #fff;
+  padding: 3px 8px;
   border-radius: 6px;
-  font-weight: bold;
-  font-size: 14px;
-  width: fit-content;
-}
-
-.bestPriceBadge {
-  background: #007bff; /* Голубой акцент */
-  color: white;
-  padding: 2px 8px;
-  border-radius: 6px;
+  font-weight: 700;
   font-size: 12px;
-  font-weight: bold;
+  width: fit-content;
+  line-height: 1.4;
 }
 
+/* ============================
+   FAVORITE BUTTON
+   ============================ */
 .favoriteBtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
+  top: 8px;
+  right: 8px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  font-size: 20px;
-  color: #666;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid #e5e7eb;
+  color: #9ca3af;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  z-index: 2;
 }
 
 .favoriteBtn:hover {
-  background: #ff4d4d;
-  color: white;
+  background: #fff0f0;
+  color: #dc2626;
+  border-color: #fca5a5;
   transform: scale(1.1);
 }
 
-.info {
-  padding: 14px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+.favActive {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+  border-color: #fca5a5 !important;
 }
 
-.priceRow {
+/* ============================
+   STOCK BADGE
+   ============================ */
+.stockBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #16a34a;
+  color: #fff;
+  padding: 3px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4px;
+  z-index: 2;
+}
+
+.stockBadge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ============================
+   INFO — flex column, кнопка всегда внизу
+   ============================ */
+.info {
+  padding: 12px 14px 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 0;
+}
+
+/* Цена */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
   margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .currentPrice {
-  color: #1e2640;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  color: #111827;
+  font-size: 17px;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
 .oldPrice {
-  color: #a0b0c0;
+  color: #9ca3af;
   text-decoration: line-through;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
+/* Название — фиксированная высота 2 строки */
 .title {
-  font-size: 14px;
-  line-height: 1.4;
-  color: #333;
-  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #374151;
+  /* Ровно 2 строки */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: calc(13px * 1.45 * 2);
+  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .brand {
-  font-weight: bold;
+  font-weight: 700;
+  color: #111827;
 }
 
+/* Рейтинг */
 .rating {
-  font-size: 13px;
-  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin-bottom: 0;
+  /* Растягиваем, чтобы кнопка оказалась внизу */
+  flex: 1;
+  align-items: flex-end;
+  padding-bottom: 10px;
 }
 
 .stars {
-  color: #ffc107;
-  margin-right: 8px;
+  color: #f59e0b;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .reviews {
-  color: #8899a6;
+  color: #9ca3af;
+  font-size: 11.5px;
 }
 
+/* ============================
+   КНОПКА — всегда внизу
+   ============================ */
 .cartBtn {
   width: 100%;
-  background: linear-gradient(135deg, #008ecc 0%, #0077b3 100%);
-  color: white;
+  background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%);
+  color: #fff;
   border: none;
-  padding: 12px 16px;
+  padding: 11px 16px;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13.5px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 142, 204, 0.25);
+  gap: 7px;
+  box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
+  margin-top: auto;
 }
 
 .cartBtn::before {
@@ -172,14 +249,13 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transition: left 0.45s ease;
 }
 
 .cartBtn:hover {
-  background: linear-gradient(135deg, #0077b3 0%, #006094 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 142, 204, 0.35);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.38);
 }
 
 .cartBtn:hover::before {
@@ -188,44 +264,15 @@
 
 .cartBtn:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(0, 142, 204, 0.25);
 }
 
 .cartIcon {
-  font-size: 18px;
-  transition: transform 0.3s ease;
-}
-
-.cartBtn:hover .cartIcon {
-  transform: scale(1.1);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .btnText {
   position: relative;
   z-index: 1;
-}
-
-/* Stock Badge */
-.stockBadge {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: #22c55e;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 4px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.stockBadge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
 }

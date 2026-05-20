@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import styles from './Banner.module.css';
+import { Link } from 'react-router-dom';
 
 const slides = [
   {
@@ -117,10 +118,11 @@ const Banner = () => {
                   <p className={styles.subTitle}>{slide.subTitle}</p>
                   <h1 className={styles.mainTitle}>{slide.mainTitle}</h1>
                   <p className={styles.promoText}>{slide.promoText}</p>
-                  
-                  <button className={styles.ctaButton}>
-                    Shop Now
-                  </button>
+                  <Link to="/shop">
+                    <button className={styles.ctaButton}>
+                      Shop Now
+                    </button>
+                  </Link>
                 </div>
 
                 <div className={styles.imageSection}>

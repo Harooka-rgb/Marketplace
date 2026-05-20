@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import styles from './mainLayout.module.css';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import Sidebar from '../components/sideBar/sideBar';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
+
+const HIDE_BREADCRUMBS = ['/'];
 
 const MainLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
 
   const openMenu = () => setIsSidebarOpen(true);
   const closeMenu = () => setIsSidebarOpen(false);
 
+  const showBreadcrumbs = !HIDE_BREADCRUMBS.includes(location.pathname);
+
   return (
     <div className={styles.wrapper}>
-      {/* 2. Рендерим сайдбар и передаем ему состояние и функцию закрытия */}
       <Sidebar isOpen={isSidebarOpen} onClose={closeMenu} />
-
-      {/* 3. Передаем в Хедер функцию открытия через пропсы */}
       <Header onMenuClick={openMenu} />
-
-      {/* Основной контент страницы (меняется роутером) */}
+      {showBreadcrumbs && <Breadcrumbs />}
       <main className={styles.main}>
         <Outlet />
       </main>
-
-      {/* Футер всегда снизу */}
       <Footer />
     </div>
   );

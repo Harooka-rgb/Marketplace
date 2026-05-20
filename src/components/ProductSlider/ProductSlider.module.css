@@ -16,6 +16,13 @@
 .slideItem {
   flex-shrink: 0;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.slideItem > * {
+  flex: 1;
+  min-height: 0;
 }
 
 /* Top Controls */

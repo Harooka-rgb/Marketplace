@@ -38,7 +38,9 @@
 }
 
 .heroBadge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: rgba(0, 142, 204, 0.1);
   color: #0284c7;
   border: 1px solid rgba(0, 142, 204, 0.2);
@@ -354,10 +356,16 @@
 }
 
 .teamEmoji {
-  font-size: 48px;
-  display: block;
-  margin-bottom: 18px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  color: #0284c7;
+  border-radius: 20px;
+  margin: 0 auto 18px;
+  border: 1px solid rgba(2, 132, 199, 0.15);
 }
 
 .teamName {
