@@ -14,6 +14,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute'
 
 const ProductDetails = lazy(() => import('./pages/ProductDetails/ProductDetails'))
 const Favorites = lazy(() => import('./pages/Favorites/Favorites'))
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin/AdminLogin'))
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard/AdminDashboard'))
 
 const App = () => {
   return (
@@ -41,6 +43,8 @@ const App = () => {
         
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </Suspense>
   )
