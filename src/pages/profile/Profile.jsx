@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiUser, FiMail, FiCalendar, FiArrowLeft, FiShoppingBag, FiHeart, FiLogOut } from 'react-icons/fi';
+import { FiUser, FiMail, FiCalendar, FiArrowLeft, FiShoppingBag, FiHeart, FiLogOut, FiShield } from 'react-icons/fi';
 import { useAuth } from '../../hooks/useAuth';
 import styles from './Profile.module.css';
+
+const ADMIN_EMAIL = 'grenitt99@gmail.com';
 
 const Profile = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -78,6 +80,13 @@ const Profile = () => {
             <FiHeart />
             Избранное
           </button>
+
+          {user?.email === ADMIN_EMAIL && (
+            <Link to="/admin/dashboard" className={`${styles.actionBtn} ${styles.adminBtn}`}>
+              <FiShield />
+              Панель администратора
+            </Link>
+          )}
           
           <button 
             className={`${styles.actionBtn} ${styles.logoutBtn}`}

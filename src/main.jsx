@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import { supabase } from './supabase';
 import { setUser } from './store/auth/authSlice';
+import './index.css';
 import App from './App';
 
 // Supabase auth listener

@@ -128,6 +128,16 @@
   color: #008ecc;
 }
 
+.adminBtn {
+  border-color: #24a148;
+  color: #24a148;
+}
+
+.adminBtn:hover {
+  background: #24a148;
+  color: white;
+}
+
 .logoutBtn {
   border-color: #ff6b6b;
   color: #ff6b6b;
